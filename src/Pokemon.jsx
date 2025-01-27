@@ -43,6 +43,15 @@ return (
 <header>
 <h1>Let's Catch Pokemon</h1>
 </header>
+<div>
+    <ui className="cards">
+{
+pokemon.map((curElem)=>{
+return <li> {curPokemon.name }</li>
+}
+
+    </ui>
+</div>
 
   </section>
     
