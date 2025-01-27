@@ -4,6 +4,8 @@ import { PokemonCards } from './PokemonCards.jsx';
 export const Pokemon = () => {
 
     const [pokemon, setPokemon] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const API = " https://pokeapi.co/api/v2/pokemon?limit=24";
 
@@ -28,12 +30,32 @@ setPokemon(detailedResponses);
     catch(error){
 console.log(error);
     }
+    finally{
+        setLoading(false);
+        setError(error);
 }
-
+}
 useEffect(() => {
 fetchPokemon();
 
 },[])
+
+if(loading){
+    return(
+        <div>
+     <h1>Loading...</h1>
+     </div> 
+     )
+}
+
+if (error){
+
+    return(
+<div>
+    <h1>Error:  {error.message}</h1>
+</div>
+    )
+}
 
 
 return (
