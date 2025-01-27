@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './index.css';
-
+import { PokemonCards } from './PokemonCards.jsx';
 export const Pokemon = () => {
 
     const [pokemon, setPokemon] = useState([]);
@@ -44,14 +44,18 @@ return (
 <h1>Let's Catch Pokemon</h1>
 </header>
 <div>
-    <ui className="cards">
+    <ul className="cards">
 {
 pokemon.map((curPokemon)=>{
-return <li> {curPokemon.name }</li>
+
+
+return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} /> // passing data to child component using props
+
+
 })
 }
 
-    </ui>
+    </ul>
 </div>
 
   </section>
