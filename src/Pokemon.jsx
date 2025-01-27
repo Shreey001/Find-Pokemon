@@ -46,8 +46,9 @@ return (
 <div>
     <ui className="cards">
 {
-pokemon.map((curElem)=>{
+pokemon.map((curPokemon)=>{
 return <li> {curPokemon.name }</li>
+})
 }
 
     </ui>
