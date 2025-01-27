@@ -7,7 +7,7 @@ export const Pokemon = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API = " https://pokeapi.co/api/v2/pokemon?limit=24";
+    const API = " https://pokeapi.co/api/v2/tpokemon?limit=24";
 
 const fetchPokemon = async () => {
     try{
@@ -26,13 +26,12 @@ return data;
 })
 const detailedResponses = await Promise.all(DetailedPokemonData);
 setPokemon(detailedResponses);
+setLoading(false);
     }
     catch(error){
 console.log(error);
-    }
-    finally{
-        setLoading(false);
-        setError(error);
+setLoading(false);
+   setError(error);
 }
 }
 useEffect(() => {
@@ -52,7 +51,7 @@ if (error){
 
     return(
 <div>
-    <h1>Error:  {error.message}</h1>
+    <h1>{error.message}</h1>
 </div>
     )
 }
