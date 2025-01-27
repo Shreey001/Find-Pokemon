@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 import { PokemonCards } from './PokemonCards.jsx';
 export const Pokemon = () => {
