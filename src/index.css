@@ -298,3 +298,31 @@ pokemon-info {
     font-size: 2rem;
   }
 }
+
+
+
+.loader {
+  width: fit-content;
+  font-size: 40px;
+  font-family: system-ui,sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0000;
+  -webkit-text-stroke: 1px #000;
+  background: conic-gradient(#000 0 0) 0/0% 100% no-repeat text;
+  animation: l1 1s linear infinite;
+
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.loader:before {
+  content: "Loading";
+}
+@keyframes l1 {
+  to{background-size: 120% 100%}
+
+  
+}
