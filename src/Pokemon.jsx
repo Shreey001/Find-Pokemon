@@ -82,7 +82,7 @@ return (
 <div>
     <ul className="cards">
 {
-searchData.map((curPokemon)=>{
+searchData.map((curPokemon)=>{ // here searchData is the filtered data from the search functionality
 
 
 return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} /> // passing data to child component using props
