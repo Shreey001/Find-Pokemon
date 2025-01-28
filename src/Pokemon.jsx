@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import { PokemonCards } from './PokemonCards.jsx';
+
+
+
 export const Pokemon = () => {
 
     const [pokemon, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [search, setSearch] = useState(null);
+    const [search, setSearch] = useState("");
 
-    const API = " https://pokeapi.co/api/v2/pokemon?limit=60";
+    const API = "https://pokeapi.co/api/v2/pokemon?limit=60";
 
 const fetchPokemon = async () => {
     try{
-const response = await fetch(API)
-const data = await response.json()
+const response = await fetch(API);
+const data = await response.json();
 // console.log(data);
 const DetailedPokemonData = data.results.map(async(curPokemon)=>{
 // console.log(curPokemon.url); 
@@ -22,9 +25,9 @@ const data = await res.json();
 
 // console.log(data);
 
-return data;
+return data;;
 
-})
+});
 const detailedResponses = await Promise.all(DetailedPokemonData);
 setPokemon(detailedResponses);
 setLoading(false);
@@ -82,10 +85,12 @@ return (
 <div>
     <ul className="cards">
 {
-searchData.map((curPokemon)=>{ // here searchData is the filtered data from the search functionality
+// Map through the filtered search data and render PokemonCards for each Pokemon
+searchData.map((curPokemon) => {
 
+// Passing the current Pokemon data to the PokemonCards component as props
+return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} />
 
-return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} /> // passing data to child component using props
 
 
 })
