@@ -2,8 +2,7 @@
 
 *A modern Pokémon catalog with live search, built using React & PokeAPI*
 
-![Demo Screenshot](https://via.placeholder.com/800x400.png/258EA6/fff?text=Pokémon+Preview+Grid)  
-*(Replace with actual screenshot)*
+![App Screenshot](./assets/demo.png)
 
 ## 🚀 Features
 - ⚡ **Real-time Search** - Filter Pokémon by name
