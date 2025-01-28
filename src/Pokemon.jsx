@@ -6,6 +6,7 @@ export const Pokemon = () => {
     const [pokemon, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState(null);
 
     const API = " https://pokeapi.co/api/v2/pokemon?limit=60";
 
@@ -39,6 +40,13 @@ fetchPokemon();
 
 },[])
 
+//search funcitonality
+
+const searchData = pokemon.filter((curPokemon)=>
+curPokemon.name.toLowerCase().includes(search.toLowerCase())
+
+);
+
 if(loading){
     return(
         <div>
@@ -64,8 +72,9 @@ return (
 <header>
 <h1>Let's Catch Pokemon</h1>
 </header>
+
 <div className='pokemon-search' >
-<input type='text' placeholder='Search Pokemon' />
+<input type='text' placeholder='Search Pokemon' value={search} onChange={(e)=>setSearch(e.target.value) } />
 
 
 </div>
@@ -73,7 +82,7 @@ return (
 <div>
     <ul className="cards">
 {
-pokemon.map((curPokemon)=>{
+searchData.map((curPokemon)=>{
 
 
 return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} /> // passing data to child component using props
