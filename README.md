@@ -2,7 +2,7 @@
 
 *A modern Pokémon catalog with live search, built using React & PokeAPI*
 
-![App Screenshot](./assets/demo.png)
+![App Screenshot](src/assets/demo.png)
 
 ## 🚀 Features
 - ⚡ **Real-time Search** - Filter Pokémon by name
