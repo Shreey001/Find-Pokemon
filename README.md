@@ -19,7 +19,7 @@
 
 ## ⚙️ Installation
 ```bash
-git clone https://github.com/yourusername/react-pokedex.git
+git clone https://github.com/yourusername/Find-Pokemon
 cd react-pokedex
 npm install
 npm start
