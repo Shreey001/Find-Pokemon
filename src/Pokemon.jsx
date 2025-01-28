@@ -64,6 +64,12 @@ return (
 <header>
 <h1>Let's Catch Pokemon</h1>
 </header>
+<div className='pokemon-search' >
+<input type='text' placeholder='Search Pokemon' />
+
+
+</div>
+
 <div>
     <ul className="cards">
 {
